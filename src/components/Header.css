@@ -1,0 +1,176 @@
+/* Variables */
+:root {
+  --primary-color: #4caf50;
+  --primary-color-light: #81c784;
+  --accent-color: #ffeb3b;
+  --text-color: #fff;
+  --nav-hover-color: #ffffff;
+  --transition-time: 0.3s;
+  --animation-time: 1s;
+  --logo-size: 100px;
+}
+
+/* Header */
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(to right, var(--primary-color), var(--primary-color-light));
+  color: var(--text-color);
+  padding: 20px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Nav */
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 20px;
+  opacity: 0;
+  animation: fadeIn 2s ease forwards;
+}
+
+.logo {
+  width: var(--logo-size);
+  transition: transform var(--transition-time);
+}
+
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.nav-link {
+  margin: 0 20px;
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: bold;
+  position: relative;
+  font-size: 1.2rem;
+  transition: color var(--transition-time);
+}
+
+.nav-link::after {
+  content: '';
+  width: 0;
+  height: 2px;
+  background: var(--accent-color);
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  transition: width var(--transition-time);
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.nav-link:hover {
+  color: var(--nav-hover-color);
+}
+
+/* Textos header */
+.textos-header {
+  text-align: center;
+  padding-top: 20px;
+  opacity: 0;
+  animation: fadeIn 2s ease forwards 1s;
+}
+
+.header-title {
+  font-size: 3rem;
+  margin: 10px 0;
+  text-transform: uppercase;
+  font-family: 'Arial', sans-serif;
+  animation: slideInFromLeft 1.5s ease forwards;
+}
+
+.header-subtitle {
+  font-size: 1.8rem;
+  margin: 10px 0;
+  font-family: 'Arial', sans-serif;
+  animation: slideInFromRight 1.5s ease forwards 1s;
+}
+
+/* Wave */
+.wave {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 150px;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" fill-opacity="1" d="M0,224L60,234.7C120,245,240,267,360,250.7C480,235,600,181,720,149.3C840,117,960,107,1080,117.3C1200,128,1320,160,1380,176L1440,192L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path></svg>') repeat-x;
+  background-size: cover;
+  animation: waveAnimation 3s infinite linear;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromLeft {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromRight {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes waveAnimation {
+  from {
+    background-position-x: 0;
+  }
+  to {
+    background-position-x: 1000px;
+  }
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  .nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+  }
+
+  .nav-link {
+    margin: 10px 0;
+  }
+
+  .logo {
+    width: 80px; /* Adjust logo size for mobile */
+  }
+
+  .header-title {
+    font-size: 2rem;
+  }
+
+  .header-subtitle {
+    font-size: 1.5rem;
+  }
+
+  .wave {
+    height: 100px;
+  }
+}

@@ -1,0 +1,92 @@
+/* Variables */
+:root {
+  --primary-color: #4caf50;
+  --primary-color-light: #81c784;
+  --accent-color: #ffeb3b;
+  --text-color: #333;
+  --transition-time: 0.3s;
+  --card-border-radius: 10px;
+}
+
+/* About Services Section */
+.about-services {
+  padding: 50px 20px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.contenedor {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.titulo {
+  font-size: 2.5em;
+  margin-bottom: 50px;
+  color: var(--primary-color);
+}
+
+.servicio-cont {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+
+.servicio-ind {
+  background: #fff;
+  border-radius: var(--card-border-radius);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform var(--transition-time), box-shadow var(--transition-time);
+  max-width: 300px;
+  text-align: center;
+  padding: 20px;
+}
+
+.servicio-ind:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.servicio-img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--card-border-radius);
+}
+
+h3 {
+  margin-top: 20px;
+  font-size: 1.5em;
+  color: var(--primary-color);
+}
+
+p {
+  margin-top: 10px;
+  color: var(--text-color);
+  font-size: 1em;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  .servicio-cont {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .servicio-ind {
+    max-width: 100%;
+  }
+
+  .titulo {
+    font-size: 2em;
+  }
+
+  h3 {
+    font-size: 1.3em;
+  }
+
+  p {
+    font-size: 0.9em;
+  }
+}

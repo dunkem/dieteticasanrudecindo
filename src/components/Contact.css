@@ -1,0 +1,130 @@
+/* Variables */
+:root {
+  --primary-color: #4caf50;
+  --primary-color-light: #81c784;
+  --accent-color: #ffeb3b;
+  --text-color: #333;
+  --background-color: #f9f9f9;
+  --form-background-color: #fff;
+  --form-border-color: #ccc;
+  --transition-time: 0.3s;
+  --input-padding: 10px;
+  --input-border-radius: 5px;
+}
+
+/* Contact Section */
+.contacto-custom {
+  padding: 50px 20px;
+  background-color: var(--background-color);
+  text-align: center;
+}
+
+.contenedor-custom {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.titulo-custom {
+  font-size: 2.5em;
+  margin-bottom: 50px;
+  color: var(--primary-color);
+}
+
+.contacto-container-custom {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.contact-form-custom {
+  flex: 1;
+  min-width: 300px;
+  background: var(--form-background-color);
+  padding: 20px;
+  border-radius: var(--input-border-radius);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-group-custom {
+  margin-bottom: 20px;
+}
+
+.label-custom {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: var(--text-color);
+}
+
+.input-custom,
+.textarea-custom {
+  width: 100%;
+  padding: var(--input-padding);
+  border: 1px solid var(--form-border-color);
+  border-radius: var(--input-border-radius);
+  transition: border-color var(--transition-time);
+}
+
+.input-custom:focus,
+.textarea-custom:focus {
+  border-color: var(--primary-color);
+  outline: none;
+}
+
+.submit-button-custom {
+  background: var(--primary-color);
+  color: var(--text-color);
+  border: none;
+  padding: 10px 20px;
+  border-radius: var(--input-border-radius);
+  font-size: 1em;
+  cursor: pointer;
+  transition: background var(--transition-time);
+}
+
+.submit-button-custom:hover {
+  background: var(--primary-color-light);
+}
+
+.contacto-info-custom {
+  flex: 1;
+  min-width: 300px;
+  text-align: left;
+}
+
+.info-title {
+  font-size: 1.2em;
+  color: var(--primary-color);
+  margin-bottom: 10px;
+}
+
+.info-text {
+  margin-bottom: 20px;
+  color: var(--text-color);
+}
+
+.map-container-custom {
+  width: 100%;
+  height: 300px; /* Aumenta la altura del mapa */
+  border-radius: var(--input-border-radius);
+  overflow: hidden;
+  margin-top: 20px;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  .contacto-container-custom {
+    flex-direction: column;
+  }
+
+  .contact-form-custom,
+  .contacto-info-custom {
+    width: 100%;
+  }
+
+  .titulo-custom {
+    font-size: 2em;
+  }
+}
